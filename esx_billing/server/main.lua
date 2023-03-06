@@ -13,10 +13,12 @@ AddEventHandler('esx_billing:sendBill', function(playerId, sharedAccountName, la
 		TriggerEvent('esx_addonaccount:getSharedAccount', sharedAccountName, function(account)
 			if account then
 			exports.pefcl:createInvoice(source, { to = to, toIdentifier = xTarget.identifier, from = from, fromIdentifier = xPlayer.identifier, amount = amount, message = label, receiverAccountIdentifier = sharedAccountName})
-					xTarget.showNotification(_U('received_invoice'))
+					xTarget.showNotification('You have just ~r~received~s~ an invoice')
+					xPlayer.showNotification('You issue an invoice')
 			else
 			exports.pefcl:createInvoice(source, { to = to, toIdentifier = xTarget.identifier, from = from, fromIdentifier = xPlayer.identifier, amount = amount, message = label})
-					xTarget.showNotification(_U('received_invoice'))
+					xTarget.showNotification('You have just ~r~received~s~ an invoice')
+					xPlayer.showNotification('You issue an invoice')
 			end
 		end)
 	end
