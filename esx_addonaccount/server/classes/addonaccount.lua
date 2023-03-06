@@ -8,7 +8,7 @@ function CreateAddonAccount(name, money)
 		self.money = self.money + m
 		exports.pefcl:addBankBalanceByIdentifier(0, {
 					amount = m,
-					message = "Wp³acono na konto firmowe",
+					message = "Deposit to society account",
 					identifier = name
 				})
 	end
@@ -17,7 +17,7 @@ function CreateAddonAccount(name, money)
 		self.money = self.money - m
 		exports.pefcl:removeBankBalanceByIdentifier(0, {
 					amount = m,
-					message = "Wyp³acono z konta firmowego",
+					message = "Withdraw from society account",
 					identifier = name
 				})
 	end
